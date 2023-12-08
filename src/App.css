@@ -2,37 +2,107 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 400px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidenav a {
+  padding: 8px 16px 20px 20px;
+  justify-content: left;
+  text-decoration: none;
+  text-align: left;
+  font-size: 30px;
+  color: #818181;
+  display: block;
+  background: #34495e;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidenav a:hover {
+  color: #f1f1f1;
+  background: #C06162;
+}
+
+.dropdown {
+  padding: 8px 16px 20px 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  color: #818181;
+  background: #34495e;
+  position: relative;
+  font-size: 30px;
+  perspective: 1000px;
+  z-index: 100;
+  &:hover {
+    color: white;
+    background: #C06162;
+    cursor: pointer;
+  }
+    
+  &:hover .dropdown_menu li {
+    display: block;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.dropdown_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  perspective: 1000px;
+  z-index: -1;
+  li {
+    display: none;
+    color: white;
+    background-color: #34495e;
+    padding: 10px 20px;
+    font-size: 16px;
+    opacity: 0;
+    &:hover {
+      background-color: #C06162;
+    }
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown:hover .dropdown_menu--animated {
+    display: block
+}
+
+.dropdown_menu--animated {
+    display: none;
+    li {
+      display: block;
+      opacity: 1;
+    }
+}
+
+.dropdown_menu-6 {
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
