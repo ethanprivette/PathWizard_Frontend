@@ -1,108 +1,112 @@
-.App {
-  text-align: center;
-}
-
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 400px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
+  z-index: 0; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #111; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color:#818181; /* Black */
+  overflow-x: scroll; /* Disable horizontal scroll */
   padding-top: 20px;
 }
 
-.sidenav a {
-  padding: 8px 16px 20px 20px;
-  justify-content: left;
-  text-decoration: none;
-  text-align: left;
-  font-size: 30px;
-  color: #818181;
-  display: block;
-  background: #34495e;
+.dropdowns {
+  padding: 16px 16px;
+  border: black;
+  border-style: none;
+  border-width: 2px;
+  border-radius: 12px;
+  margin: 8px 8px 2px;
+  background-color: #818181;
+  cursor: pointer;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
-  background: #C06162;
-}
-
-.dropdown {
-  padding: 8px 16px 20px 20px;
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  text-align: left;
-  color: #818181;
-  background: #34495e;
+.sideButton {
   position: relative;
-  font-size: 30px;
-  perspective: 1000px;
-  z-index: 100;
+  background-color: darkgray;
+  width: 92%;
+  border: none;
+  border-radius: 12px;
+  color: black;
+  padding: 12px;
+  margin: 16px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  height: 74.4px;
+}
+
+.test {
+  color:#818181;
+}
+
+input, ul.submenu {
+  display: none;
+  padding: 0px;
+}
+
+.baseul {
+  padding: 12px;
+  margin: 16px;
+  width: 86%;
+  background-color: darkgray;
+  border-radius: 12px;
+}
+
+/*position the label*/
+label {
+  position: relative;
+  border: black;
+  border-radius: 12px;
+  border-width: 2px;
+  width: 90%;
+  text-align: left;
+  background-color: darkgray;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 16px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: darkgray;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: gray;
+    transition: all .3s;
+    border-radius: 12px;
+    z-index: -1;
+  }
   &:hover {
-    color: white;
-    background: #C06162;
-    cursor: pointer;
-  }
-    
-  &:hover .dropdown_menu li {
-    display: block;
-  }
-}
-
-.dropdown_menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  perspective: 1000px;
-  z-index: -1;
-  li {
-    display: none;
-    color: white;
-    background-color: #34495e;
-    padding: 10px 20px;
-    font-size: 16px;
-    opacity: 0;
-    &:hover {
-      background-color: #C06162;
+    color: black;
+    &:before {
+      width: 100%
     }
   }
 }
 
-.dropdown:hover .dropdown_menu--animated {
-    display: block
-}
-
-.dropdown_menu--animated {
-    display: none;
-    li {
-      display: block;
-      opacity: 1;
-    }
-}
-
-.dropdown_menu-6 {
-    animation: growDown 300ms ease-in-out forwards;
-    transform-origin: top center;
-}
-
-@keyframes growDown {
-    0% {
-        transform: scaleY(0)
-    }
-    80% {
-        transform: scaleY(1.1)
-    }
-    100% {
-        transform: scaleY(1)
-    }
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+/*show the submenu when input is checked*/
+input:checked~ul.submenu {
+  display: block;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  width: 98.75%
 }

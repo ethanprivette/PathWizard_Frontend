@@ -1,25 +1,30 @@
 import './App.css';
 
+function handleClick() {
+  console.log("cliked!")
+}
+
 function App() {
   return (
-    <div className="App">
-      <div class="sidenav">
-        <a href="#">Waypoints</a>
-        <a href="#">Global Constraints</a>
-        <a href="#">End Velocity</a>
-        <a href="#">Event Markers</a>
-        <a href="#">Constraint Zones</a>
-        <a href="#">Reversed</a>
-
-        <li class="dropdown dropdown-6">Test
-          <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
-            <li class="dropdown_item-1">test1</li>
-            <li class="dropdown_item-2">test2</li>
-            <li class="dropdown_item-3">test3</li>
-            <li class="dropdown_item-4">test4</li>
-          </ul>        
-        </li>
-      </div>
+    <div class="sidenav">
+      <ul class="baseul">
+        <input id="check01" type="checkbox" name="menu" />
+          <label for="check01">Waypoints</label>
+          <ul class="submenu">
+            <ul class="dropdowns">Start Point</ul>
+            <ul class ="dropdowns">End Point</ul>
+          </ul>
+      </ul>
+      <button class="sideButton"onClick={handleClick}><label>Global Constraints</label></button>
+      <button class="sideButton"onClick={handleClick}><label>End Velocity</label></button>
+      <ul class="baseul">
+        <input id="check02" type="checkbox" name="menu" />
+          <label for="check02">Event Markers</label>
+          <ul class="submenu">
+            <ul class="dropdowns">test 1</ul>
+            <ul class="dropdowns">test 2</ul>
+          </ul>
+      </ul>
     </div>
   );
 }
