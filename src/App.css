@@ -1,6 +1,6 @@
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 400px; /* Set the width of the sidebar */
+  width: 26.1%; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 0; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -8,10 +8,55 @@
   background-color:#818181; /* Black */
   overflow-x: scroll; /* Disable horizontal scroll */
   padding-top: 20px;
+  border-right-style: solid;
+}
+
+.topMenu {
+  width: 73.8%;
+  height: 175px;
+  position: fixed;
+  z-index: -1;
+  background-color: white;
+  top: 0;
+  right: 0;
+  border-bottom-style: solid;
+}
+
+.estTime {
+  padding: 16px;
+  background-color: darkgray;
+  width: 72%;
+  text-align: center;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 16px 16px 8px;
+  border-radius: 12px;
+}
+
+.driveTime {
+  border-bottom-style: solid;
+  border-right-style: solid;
+  width: 20%;
+  z-index: -1;
+  padding: 18px 0px 0px;
+  height: 90%;
+  background-color:#818181;
+}
+
+.estNum {
+  padding: 16px;
+  background-color: darkgray;
+  width: 60%;
+  text-align: center;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 8px 30px;
+  border-radius: 12px;
 }
 
 .dropdowns {
   padding: 16px 16px;
+  display: block;
   border: black;
   border-style: none;
   border-width: 2px;
@@ -19,7 +64,174 @@
   margin: 8px 8px 2px;
   background-color: #818181;
   cursor: pointer;
+  text-align: left;
+  width: 95%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
+
+.content {
+  position: absolute;
+  display: block;
+  background-color: #818181;
+  height: 100%;
+  width: 80%;
+  top: 0px;
+  left: 20%;
+  z-index: -1;
+  border-bottom-style: solid;
+}
+
+.dropdown {
+  padding: 12px;
+  margin: 16px;
+  background-color: darkgray;
+  border-radius: 12px;
+  height: 50.4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: darkgray;
+  z-index: 1;
+  height: 82.5%;
+  margin: 16px;
+  border-radius: 12px;
+}
+
+.waypointName {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px 16px 16px;
+  width: 22.37%;
+  text-align: center;
+  height: 77.5%;
+}
+
+.waypointName a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.waypointName c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.Xpos {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px;
+  width: 22.37%;
+  text-align: center;
+  height: 77.5%;
+}
+
+.Xpos a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.Xpos c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.Ypos {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px;
+  width: 22.37%;
+  text-align: center;
+  height: 77.5%;
+}
+
+.Ypos a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.Ypos c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.heading {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 16px 16px 10px;
+  width: 22.37%;
+  text-align: center;
+  height: 77.5%;
+}
+
+.heading a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.heading c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.button2 {
+  background-color: darkgray;
+  border: none;
+  width: 100%;
+  padding: 0px;
+}
+
+.show {display:block;}
 
 .sideButton {
   position: relative;
@@ -108,5 +320,4 @@ input:checked~ul.submenu {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
-  width: 98.75%
 }
