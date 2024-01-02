@@ -1,22 +1,40 @@
 import './App.css';
 
-function handleClick() {
-  var startPoint = document.getElementById("waypoint1")
-  var endPoint = document.getElementById("waypoint2")
+var first = true
+let prevDiv
 
+function handleClick(id) {
   console.log("DWABA")
 
-  if (!startPoint.classList.contains("show")) {
-    if (!endPoint.classList.contains("show")) {
-      startPoint.classList.toggle("show")
+  var targetDiv = document.getElementById('content' + id)
+
+  if (targetDiv) {
+    console.log("div found")
+
+    if (first) {
+      targetDiv.classList.toggle("show")
+      first = false
     } else {
-      startPoint.classList.toggle("show")
-      endPoint.classList.toggle("show")
+      prevDiv.classList.toggle("show")
+      targetDiv.classList.toggle("show")
     }
+
+    prevDiv = targetDiv
   } else {
-    startPoint.classList.toggle("show")
-    endPoint.classList.toggle("show")
+    console.error('Div not found ' + id)
   }
+
+  // if (!startPoint.classList.contains("show")) {
+  //   if (!endPoint.classList.contains("show")) {
+  //     startPoint.classList.toggle("show")
+  //   } else {
+  //     startPoint.classList.toggle("show")
+  //     endPoint.classList.toggle("show")
+  //   }
+  // } else {
+  //   startPoint.classList.toggle("show")
+  //   endPoint.classList.toggle("show")
+  // }
 }
 
 var estDriveTime = 2.24;
@@ -26,78 +44,91 @@ var xPos = 6.44;
 var yPos = 9.32;
 var heading = 90;
 
+var testSpeed = 2.5
+var testAccel = 3
+
 function App() {
   return (
-    <div class="topMenu">
-      <div class="driveTime">
-        <div class="estTime">Est Driving Time</div>
-        <div class="estNum">{estDriveTime}</div>
+    <div className="topMenu">
+      <div className="driveTime">
+        <div className="estTime">Est Driving Time</div>
+        <div className="estNum">{estDriveTime}</div>
       </div>
-      <div class="content">
-        <div id="waypoint1" class="dropdown-content">
-          <div class="waypointName">
+      <div className="content">
+        <div id="contentWaypoint1" className="dropdown-content">
+          <div className="waypointName">
             <a>Name</a>
             <c>{waypointName}</c>
           </div>
-          <div class="Xpos">
+          <div className="Xpos">
             <a>X Pose</a>
             <c>{xPos}</c>
           </div>
-          <div class="Ypos">
+          <div className="Ypos">
             <a>Y Pose</a>
             <c>{yPos}</c>
           </div>
-          <div class="heading">
+          <div className="heading">
             <a>Heading</a>
             <c>{heading}</c>
           </div>
         </div>
-        <div id="waypoint2" class="dropdown-content">
-          <div class="waypointName">
+        <div id="contentWaypoint2" className="dropdown-content">
+          <div className="waypointName">
             <a>Name</a>
             <c>eee</c>
           </div>
-          <div class="Xpos">
+          <div className="Xpos">
             <a>X Pose</a>
             <c>9572</c>
           </div>
-          <div class="Ypos">
+          <div className="Ypos">
             <a>Y Pose</a>
             <c>412</c>
           </div>
-          <div class="heading">
+          <div className="heading">
             <a>Heading</a>
             <c>180</c>
           </div>
         </div>
+        <div className='dropdown-content' id='contentConstraints'>
+          <div className='maxSpeed'>
+            <a>Max Speed</a>
+            <c>{testSpeed} meters/s</c>
+          </div>
+          <div className='maxAccel'>
+            <a>Max Acceleration</a>
+            <c>{testAccel} m/s^2</c>
+          </div>
+        </div>
       </div>
-      <div class="sidenav">
-        <ul class="baseul">
+      <div className="sidenav">
+        <ul className="baseul">
           <input id="check01" type="checkbox" name="menu" />
           <label for="check01">Waypoints</label>
-          <ul class="submenu">
-            <button class="dropdowns" onClick={handleClick}>{waypointName}</button>
-            <button class="dropdowns" onClick={handleClick}>End Point</button>
+          <ul className="submenu">
+            <button className="dropdowns" onClick={function(){handleClick('Waypoint1')}}>{waypointName}</button>
+            <button className="dropdowns" onClick={function(){handleClick('Waypoint2')}}>End Point</button>
           </ul>
         </ul>
-        <div class="dropdown">
-          <button class="button2" onClick={handleClick}><label>Global Constraints</label></button>
+        <div className="dropdown">
+          <button className="button2" onClick={function(){handleClick('Constraints')}}><label>Global Constraints</label></button>
         </div>
-        <button class="sideButton" onClick={handleClick}><label>End Velocity</label></button>
-        <ul class="baseul">
+        <button className="sideButton" onClick={function(){handleClick(4)}}><label>End Velocity</label></button>
+        <ul className="baseul">
           <input id="check02" type="checkbox" name="menu" />
           <label for="check02">Event Markers</label>
-          <ul class="submenu">
-            <button class="dropdowns" onClick={handleClick}>event 1</button>
-            <button class="dropdowns" onClick={handleClick}>event 2</button>
+          <ul className="submenu">
+            <button className="dropdowns" onClick={function(){handleClick(5)}}>event 1</button>
+            <button className="dropdowns" onClick={function(){handleClick(6)}}>event 2</button>
           </ul>
         </ul>
-        <ul class="baseul">
+        <ul className="baseul">
           <input id="check03" type="checkbox" name="menu" />
           <label for="check03">Constraint Zones</label>
-          <ul class="submenu">
-            <button class="dropdowns" onClick={handleClick}>Zone 1</button>
-            <button class="dropdowns" onClick={handleClick}>Zone 2</button>
+          <ul className="submenu">
+            <button className="dropdowns" onClick={function(){handleClick(7)}}>Zone 1</button>
+            <button className="dropdowns" onClick={function(){handleClick(8)}}>Zone 2</button>
           </ul>
         </ul>
       </div>
