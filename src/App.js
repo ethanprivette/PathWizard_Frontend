@@ -4,8 +4,6 @@ var first = true
 let prevDiv
 
 function handleClick(id) {
-  console.log("DWABA")
-
   var targetDiv = document.getElementById('content' + id)
 
   if (targetDiv) {
@@ -23,18 +21,6 @@ function handleClick(id) {
   } else {
     console.error('Div not found ' + id)
   }
-
-  // if (!startPoint.classList.contains("show")) {
-  //   if (!endPoint.classList.contains("show")) {
-  //     startPoint.classList.toggle("show")
-  //   } else {
-  //     startPoint.classList.toggle("show")
-  //     endPoint.classList.toggle("show")
-  //   }
-  // } else {
-  //   startPoint.classList.toggle("show")
-  //   endPoint.classList.toggle("show")
-  // }
 }
 
 var estDriveTime = 2.24;
@@ -44,8 +30,17 @@ var xPos = 6.44;
 var yPos = 9.32;
 var heading = 90;
 
-var testSpeed = 2.5
-var testAccel = 3
+var maxSpeed = 2.5
+var maxAccel = 3
+
+var endSpeed = 2.75
+var endRotation = 180
+
+var zone1Name = 'testing'
+var zone1StartPos = 0.5
+var zone1EndPos = 0.75
+var zone1MaxSpeed = 2
+var zone1MaxAccel = 1.75
 
 function App() {
   return (
@@ -58,7 +53,7 @@ function App() {
         <div id="contentWaypoint1" className="dropdown-content">
           <div className="waypointName">
             <a>Name</a>
-            <c>{waypointName}</c>
+            <c><input type='text'></input></c>
           </div>
           <div className="Xpos">
             <a>X Pose</a>
@@ -94,11 +89,43 @@ function App() {
         <div className='dropdown-content' id='contentConstraints'>
           <div className='maxSpeed'>
             <a>Max Speed</a>
-            <c>{testSpeed} meters/s</c>
+            <c>{maxSpeed} m/s</c>
           </div>
           <div className='maxAccel'>
             <a>Max Acceleration</a>
-            <c>{testAccel} m/s^2</c>
+            <c>{maxAccel} m/s^2</c>
+          </div>
+        </div>
+        <div className='dropdown-content' id='contentEndStates'>
+          <div className='endVelocity'>
+            <a>End Velocity</a>
+            <c>{endSpeed} m/s</c>
+          </div>
+          <div className='endRotation'>
+            <a>End Rotation</a>
+            <c>{endRotation}</c>
+          </div>
+        </div>
+        <div className='dropdown-content' id='contentConstraintZone1'>
+          <div className='zoneName'>
+            <a>Name</a>
+            <c>{zone1Name}</c>
+          </div>
+          <div className='zoneStart'>
+            <a>Start</a>
+            <c>{zone1StartPos}</c>
+          </div>
+          <div className='zoneEnd'>
+            <a>End</a>
+            <c>{zone1EndPos}</c>
+          </div>
+          <div className='zoneMaxSpeed'>
+            <a>Max Speed</a>
+            <c>{zone1MaxSpeed} m/s</c>
+          </div>
+          <div className='zoneMaxAccel'>
+            <a>Max Accel</a>
+            <c>{zone1MaxAccel} m/2^2</c>
           </div>
         </div>
       </div>
@@ -114,12 +141,12 @@ function App() {
         <div className="dropdown">
           <button className="button2" onClick={function(){handleClick('Constraints')}}><label>Global Constraints</label></button>
         </div>
-        <button className="sideButton" onClick={function(){handleClick(4)}}><label>End Velocity</label></button>
+        <button className="sideButton" onClick={function(){handleClick('EndStates')}}><label>End Velocity</label></button>
         <ul className="baseul">
           <input id="check02" type="checkbox" name="menu" />
           <label for="check02">Event Markers</label>
           <ul className="submenu">
-            <button className="dropdowns" onClick={function(){handleClick(5)}}>event 1</button>
+            <button className="dropdowns" onClick={function(){handleClick('')}}>event 1</button>
             <button className="dropdowns" onClick={function(){handleClick(6)}}>event 2</button>
           </ul>
         </ul>
@@ -127,7 +154,7 @@ function App() {
           <input id="check03" type="checkbox" name="menu" />
           <label for="check03">Constraint Zones</label>
           <ul className="submenu">
-            <button className="dropdowns" onClick={function(){handleClick(7)}}>Zone 1</button>
+            <button className="dropdowns" onClick={function(){handleClick('ConstraintZone1')}}>Zone 1</button>
             <button className="dropdowns" onClick={function(){handleClick(8)}}>Zone 2</button>
           </ul>
         </ul>

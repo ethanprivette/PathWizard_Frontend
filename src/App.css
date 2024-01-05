@@ -286,6 +286,254 @@
   margin-top: 20px;
 }
 
+.endVelocity {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px 16px 16px;
+  width: 47%;
+  text-align: center;
+  height: 80%;
+}
+
+.endVelocity a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.endVelocity c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.endRotation {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px;;
+  width: 47%;
+  text-align: center;
+  height: 80%;
+}
+
+.endRotation a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.endRotation c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.zoneName {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px 16px 16px;
+  width: 17.43%;
+  text-align: center;
+  height: 80%;
+}
+
+.zoneName a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.zoneName c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.zoneStart {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px;
+  width: 17.43%;
+  text-align: center;
+  height: 80%;
+}
+
+.zoneStart a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.zoneStart c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.zoneEnd {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px;
+  width: 17.43%;
+  text-align: center;
+  height: 80%;
+}
+
+.zoneEnd a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.zoneEnd c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.zoneMaxSpeed {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px;
+  width: 17.43%;
+  text-align: center;
+  height: 80%;
+}
+
+.zoneMaxSpeed a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.zoneMaxSpeed c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.zoneMaxSpeed {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px;
+  width: 17.43%;
+  text-align: center;
+  height: 80%;
+}
+
+.zoneMaxSpeed a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.zoneMaxSpeed c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.zoneMaxAccel {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 16px 16px 10px;
+  width: 17.43%;
+  text-align: center;
+  height: 80%;
+}
+
+.zoneMaxAccel a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.zoneMaxAccel c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
 .button2 {
   background-color: darkgray;
   border: none;
