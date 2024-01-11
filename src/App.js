@@ -23,6 +23,75 @@ function handleClick(id) {
   }
 }
 
+function Waypoint({ id, waypointName, xPos, yPos, heading }) {
+  return (
+    <div id={id} className="dropdown-content">
+      <div className="waypointName">
+        <a>Name</a>
+        <c>{waypointName}</c>
+      </div>
+      <div className="Xpos">
+        <a>X Pose</a>
+        <c>{xPos}</c>
+      </div>
+      <div className="Ypos">
+        <a>Y Pose</a>
+        <c>{yPos}</c>
+      </div>
+      <div className="heading">
+        <a>Heading</a>
+        <c>{heading}</c>
+      </div>
+    </div>
+  )
+}
+
+function ConstraintZone({ id, zoneName, start, end, maxSpeed, maxAccel }) {
+  return (
+    <div className='dropdown-content' id={id}>
+      <div className='zoneName'>
+        <a>Name</a>
+        <c>{zoneName}</c>
+      </div>
+      <div className='zoneStart'>
+        <a>Start</a>
+        <c>{start}</c>
+      </div>
+      <div className='zoneEnd'>
+        <a>End</a>
+        <c>{end}</c>
+      </div>
+      <div className='zoneMaxSpeed'>
+        <a>Max Speed</a>
+        <c>{maxSpeed} m/s</c>
+      </div>
+      <div className='zoneMaxAccel'>
+        <a>Max Accel</a>
+        <c>{maxAccel} m/2^2</c>
+      </div>
+    </div>
+  )
+}
+
+function EventMarker({ id, markerName, eventName, position }) {
+  return (
+    <div className='dropdown-content' id={id}>
+      <div className='markerName'>
+        <a>Marker Name</a>
+        <c>{markerName}</c>
+      </div>
+      <div className='markerEvent'>
+        <a>Event</a>
+        <c>{eventName}</c>
+      </div>
+      <div className='markerPosition'>
+        <a>Marker Pos</a>
+        <c>{position}</c>
+      </div>
+    </div>
+  )
+}
+
 var estDriveTime = 2.24;
 
 var waypointName = "Start Point";
@@ -35,6 +104,10 @@ var maxAccel = 3
 
 var endSpeed = 2.75
 var endRotation = 180
+
+var marker1Name = 'dhwadwa'
+var marker1Event = 'randomthingidk'
+var marker1Pos = 0.78
 
 var zone1Name = 'testing'
 var zone1StartPos = 0.5
@@ -50,42 +123,8 @@ function App() {
         <div className="estNum">{estDriveTime}</div>
       </div>
       <div className="content">
-        <div id="contentWaypoint1" className="dropdown-content">
-          <div className="waypointName">
-            <a>Name</a>
-            <c><input type='text'></input></c>
-          </div>
-          <div className="Xpos">
-            <a>X Pose</a>
-            <c>{xPos}</c>
-          </div>
-          <div className="Ypos">
-            <a>Y Pose</a>
-            <c>{yPos}</c>
-          </div>
-          <div className="heading">
-            <a>Heading</a>
-            <c>{heading}</c>
-          </div>
-        </div>
-        <div id="contentWaypoint2" className="dropdown-content">
-          <div className="waypointName">
-            <a>Name</a>
-            <c>eee</c>
-          </div>
-          <div className="Xpos">
-            <a>X Pose</a>
-            <c>9572</c>
-          </div>
-          <div className="Ypos">
-            <a>Y Pose</a>
-            <c>412</c>
-          </div>
-          <div className="heading">
-            <a>Heading</a>
-            <c>180</c>
-          </div>
-        </div>
+        <Waypoint id="contentWaypoint1" waypointName="Start Point" xPos={xPos} yPos={yPos} heading={heading} />
+        <Waypoint id="contentWaypoint2" waypointName="eeee" xPos={9572} yPos={412} heading={180} />
         <div className='dropdown-content' id='contentConstraints'>
           <div className='maxSpeed'>
             <a>Max Speed</a>
@@ -106,56 +145,36 @@ function App() {
             <c>{endRotation}</c>
           </div>
         </div>
-        <div className='dropdown-content' id='contentConstraintZone1'>
-          <div className='zoneName'>
-            <a>Name</a>
-            <c>{zone1Name}</c>
-          </div>
-          <div className='zoneStart'>
-            <a>Start</a>
-            <c>{zone1StartPos}</c>
-          </div>
-          <div className='zoneEnd'>
-            <a>End</a>
-            <c>{zone1EndPos}</c>
-          </div>
-          <div className='zoneMaxSpeed'>
-            <a>Max Speed</a>
-            <c>{zone1MaxSpeed} m/s</c>
-          </div>
-          <div className='zoneMaxAccel'>
-            <a>Max Accel</a>
-            <c>{zone1MaxAccel} m/2^2</c>
-          </div>
-        </div>
+        <EventMarker id='contentEventMarker1' markerName={marker1Name} eventName={marker1Event} position={marker1Pos}/>
+        <ConstraintZone id="contentConstraintZone1" zoneName={zone1Name} start={zone1StartPos} end={zone1EndPos} maxSpeed={zone1MaxSpeed} maxAccel={zone1MaxAccel} />
       </div>
       <div className="sidenav">
         <ul className="baseul">
           <input id="check01" type="checkbox" name="menu" />
           <label for="check01">Waypoints</label>
           <ul className="submenu">
-            <button className="dropdowns" onClick={function(){handleClick('Waypoint1')}}>{waypointName}</button>
-            <button className="dropdowns" onClick={function(){handleClick('Waypoint2')}}>End Point</button>
+            <button className="dropdowns" onClick={function () { handleClick('Waypoint1') }}>{waypointName}</button>
+            <button className="dropdowns" onClick={function () { handleClick('Waypoint2') }}>End Point</button>
           </ul>
         </ul>
         <div className="dropdown">
-          <button className="button2" onClick={function(){handleClick('Constraints')}}><label>Global Constraints</label></button>
+          <button className="button2" onClick={function () { handleClick('Constraints') }}><label>Global Constraints</label></button>
         </div>
-        <button className="sideButton" onClick={function(){handleClick('EndStates')}}><label>End Velocity</label></button>
+        <button className="sideButton" onClick={function () { handleClick('EndStates') }}><label>End Velocity</label></button>
         <ul className="baseul">
           <input id="check02" type="checkbox" name="menu" />
           <label for="check02">Event Markers</label>
           <ul className="submenu">
-            <button className="dropdowns" onClick={function(){handleClick('')}}>event 1</button>
-            <button className="dropdowns" onClick={function(){handleClick(6)}}>event 2</button>
+            <button className="dropdowns" onClick={function () { handleClick('EventMarker1') }}>event 1</button>
+            <button className="dropdowns" onClick={function () { handleClick(6) }}>event 2</button>
           </ul>
         </ul>
         <ul className="baseul">
           <input id="check03" type="checkbox" name="menu" />
           <label for="check03">Constraint Zones</label>
           <ul className="submenu">
-            <button className="dropdowns" onClick={function(){handleClick('ConstraintZone1')}}>Zone 1</button>
-            <button className="dropdowns" onClick={function(){handleClick(8)}}>Zone 2</button>
+            <button className="dropdowns" onClick={function () { handleClick('ConstraintZone1') }}>Zone 1</button>
+            <button className="dropdowns" onClick={function () { handleClick(8) }}>Zone 2</button>
           </ul>
         </ul>
       </div>

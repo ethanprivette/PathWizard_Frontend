@@ -348,6 +348,99 @@
   margin-top: 20px;
 }
 
+.markerName {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px 16px 16px;
+  width: 30.59%;
+  text-align: center;
+  height: 80%;
+}
+
+.markerName a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.markerName c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.markerEvent {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 10px;
+  width: 30.59%;
+  text-align: center;
+  height: 80%;
+}
+
+.markerEvent a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.markerEvent c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.markerPosition {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 16px 16px 16px 10px;
+  width: 30.59%;
+  text-align: center;
+  height: 80%;
+}
+
+.markerPosition a {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+}
+
+.markerPosition c {
+  color: black;
+  display: inline-block;
+  background-color: #818181;
+  border-radius: 12px;
+  padding: 12px;
+  width: 85%;
+  margin-top: 20px;
+}
+
 .zoneName {
   position: relative;
   display: inline-block;
