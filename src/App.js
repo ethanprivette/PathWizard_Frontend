@@ -7,8 +7,6 @@ function handleClick(id) {
   var targetDiv = document.getElementById('content' + id)
 
   if (targetDiv) {
-    console.log("div found")
-
     if (first) {
       targetDiv.classList.toggle("show")
       first = false
@@ -109,6 +107,10 @@ var marker1Name = 'dhwadwa'
 var marker1Event = 'randomthingidk'
 var marker1Pos = 0.78
 
+var marker2Name = 'ojfhawid'
+var marker2Event = 'ebfiea'
+var marker2Pos = 0.285
+
 var zone1Name = 'testing'
 var zone1StartPos = 0.5
 var zone1EndPos = 0.75
@@ -146,7 +148,9 @@ function App() {
           </div>
         </div>
         <EventMarker id='contentEventMarker1' markerName={marker1Name} eventName={marker1Event} position={marker1Pos}/>
+        <EventMarker id='contentEventMarker2' markerName={marker2Name} eventName={marker2Event} position={marker2Pos}/>
         <ConstraintZone id="contentConstraintZone1" zoneName={zone1Name} start={zone1StartPos} end={zone1EndPos} maxSpeed={zone1MaxSpeed} maxAccel={zone1MaxAccel} />
+        <ConstraintZone id='contentConstraintZone2' zoneName="tesdnwa" start={0.32} end={0.97} maxSpeed={3} maxAccel={3} />
       </div>
       <div className="sidenav">
         <ul className="baseul">
@@ -157,16 +161,14 @@ function App() {
             <button className="dropdowns" onClick={function () { handleClick('Waypoint2') }}>End Point</button>
           </ul>
         </ul>
-        <div className="dropdown">
-          <button className="button2" onClick={function () { handleClick('Constraints') }}><label>Global Constraints</label></button>
-        </div>
+        <button className='sideButton' onClick={function () { handleClick('Constraints') }}><label>Global Constraints</label></button>
         <button className="sideButton" onClick={function () { handleClick('EndStates') }}><label>End Velocity</label></button>
         <ul className="baseul">
           <input id="check02" type="checkbox" name="menu" />
           <label for="check02">Event Markers</label>
           <ul className="submenu">
             <button className="dropdowns" onClick={function () { handleClick('EventMarker1') }}>event 1</button>
-            <button className="dropdowns" onClick={function () { handleClick(6) }}>event 2</button>
+            <button className="dropdowns" onClick={function () { handleClick('EventMarker2') }}>event 2</button>
           </ul>
         </ul>
         <ul className="baseul">
@@ -174,10 +176,11 @@ function App() {
           <label for="check03">Constraint Zones</label>
           <ul className="submenu">
             <button className="dropdowns" onClick={function () { handleClick('ConstraintZone1') }}>Zone 1</button>
-            <button className="dropdowns" onClick={function () { handleClick(8) }}>Zone 2</button>
+            <button className="dropdowns" onClick={function () { handleClick('ConstraintZone2') }}>Zone 2</button>
           </ul>
         </ul>
       </div>
+      <div className='fieldImg'></div>
     </div>
   );
 }
